@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro de comunidad | Comunidad Nexo</title>
+  <meta name="description" content="Formulario demo para registro de miembros y visitantes de Comunidad Nexo." />
+  <meta name="theme-color" content="#19b7b2" />
+  <link rel="icon" type="image/png" href="assets/nexo-icon-clean-web.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" data-header>
+    <a href="index.html" class="brand" aria-label="Comunidad Nexo inicio">
+      <img class="brand-logo" src="assets/nexo-logo-clean-web.png" alt="Comunidad Nexo" />
+    </a>
+    <button class="menu-toggle" data-menu-toggle aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" data-nav aria-label="Navegación principal">
+      <a href="index.html" class="">Inicio</a>
+<a href="declaracion-de-fe.html" class="">Fe</a>
+<a href="videos.html" class="">Videos</a>
+<a href="registro.html" class="active">Registro</a>
+<a href="index.html#visitanos" class="">Visítanos</a>
+      <a href="index.html#dar" class="nav-pill">Dar</a>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero register-hero">
+      <p class="eyebrow">Registro de comunidad</p>
+      <h1>Una forma ordenada de conocer, acompañar y cuidar mejor a la comunidad.</h1>
+      <p class="lead">Formulario para recoger datos de visitantes, miembros y personas interesadas en grupos, servicio u oración.</p>
+    </section>
+    <section class="registration-layout section-pad">
+      <div class="form-intro">
+        <p class="eyebrow">Acompañamiento</p>
+        <h2>Registro inicial</h2>
+        <p>Este formulario ayuda a ordenar el seguimiento de personas nuevas, miembros, grupos, servicio y peticiones de oración. La versión final puede conectarse a Google Sheets, Airtable, Notion o un CRM pastoral.</p>
+        <div class="privacy-note"><strong>Nota pastoral:</strong> pedir solo datos necesarios, explicar su uso y proteger la información personal de la comunidad.</div>
+      </div>
+      <form class="community-form" data-registration-form>
+        <label>Nombre completo <input name="nombre" required placeholder="Nombre y apellidos" /></label>
+        <label>Correo <input name="correo" type="email" placeholder="correo@ejemplo.com" /></label>
+        <label>WhatsApp / teléfono <input name="telefono" placeholder="+506 ..." /></label>
+        <label>Tipo de registro <select name="tipo"><option>Primera visita</option><option>Miembro de la comunidad</option><option>Interés en grupos</option><option>Interés en servir</option><option>Petición de oración</option></select></label>
+        <label>Área de interés <select name="interes"><option>Quiero recibir información</option><option>Grupos / discipulado</option><option>Niños / familias</option><option>Servicio voluntario</option><option>Enseñanzas / recursos</option></select></label>
+        <label class="full">Mensaje / notas <textarea name="mensaje" rows="5" placeholder="Contanos cómo podemos acompañarte"></textarea></label>
+        <label class="check full"><input name="consentimiento" type="checkbox" required /> Acepto que Comunidad Nexo use estos datos para contactarme y dar seguimiento pastoral/comunitario.</label>
+        <div class="form-actions full"><button class="btn btn-primary" type="submit">Enviar registro</button><button class="btn btn-ghost admin-export" type="button" data-download-registrations>Exportar registros</button></div>
+        <p class="form-status full" data-form-status></p>
+      </form>
+    </section>
+  </main>
+  <footer class="footer"><img class="brand-logo footer-logo" src="assets/nexo-logo-clean-web.png" alt="Comunidad Nexo" /><p>Compartimos el evangelio y formamos discípulos de Cristo.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>

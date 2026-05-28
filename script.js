@@ -25,3 +25,44 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.14 });
 
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+
+
+const registrationForm = document.querySelector('[data-registration-form]');
+const statusEl = document.querySelector('[data-form-status]');
+const downloadBtn = document.querySelector('[data-download-registrations]');
+const storageKey = 'nexo_demo_registros';
+
+function getRegistrations() {
+  try { return JSON.parse(localStorage.getItem(storageKey) || '[]'); }
+  catch { return []; }
+}
+
+if (registrationForm) {
+  registrationForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(registrationForm).entries());
+    data.fecha = new Date().toISOString();
+    const rows = getRegistrations();
+    rows.push(data);
+    localStorage.setItem(storageKey, JSON.stringify(rows));
+    registrationForm.reset();
+    if (statusEl) statusEl.textContent = `Registro guardado para revisión. Total en este navegador: ${rows.length}.`;
+  });
+}
+
+if (downloadBtn) {
+  downloadBtn.addEventListener('click', () => {
+    const rows = getRegistrations();
+    const headers = ['fecha','nombre','correo','telefono','tipo','interes','mensaje','consentimiento'];
+    const escape = (value='') => '"' + String(value).replaceAll('"','""') + '"';
+    const csv = [headers.join(','), ...rows.map(row => headers.map(h => escape(row[h] || '')).join(','))].join('\n');
+    const blob = new Blob([csv], {type: 'text/csv;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'registros-comunidad-nexo-demo.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+    if (statusEl) statusEl.textContent = rows.length ? 'CSV descargado.' : 'No hay registros guardados todavía.';
+  });
+}
