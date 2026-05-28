@@ -36,13 +36,15 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 18px clamp(18px, 4vw, 54px);
+  padding: 14px clamp(18px, 4vw, 54px);
   background: rgba(255, 253, 248, .83);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(23, 33, 34, .08);
 }
 
-.brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: -.02em; }
+.brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: -.02em; min-width: 0; }
+.brand-logo { display: block; width: clamp(150px, 15vw, 220px); height: auto; object-fit: contain; }
+.footer-logo { width: clamp(132px, 15vw, 210px); filter: brightness(1.08); }
 .brand-text strong { color: var(--teal-dark); }
 .brand.small { color: var(--white); }
 .brand.small .brand-text strong { color: var(--teal); }
@@ -101,19 +103,31 @@ h3 { font-size: 1.25rem; letter-spacing: -.03em; }
   position: absolute;
   inset: 0 78px 95px 0;
   background:
-    linear-gradient(135deg, rgba(16,20,21,.12), rgba(16,20,21,.55)),
-    radial-gradient(circle at 28% 26%, rgba(239,109,98,.85) 0 7%, transparent 8%),
-    radial-gradient(circle at 70% 26%, rgba(24,183,178,.75) 0 12%, transparent 13%),
-    linear-gradient(150deg, #d9eee8, #f3dccb 42%, #344047);
+    linear-gradient(135deg, rgba(16,20,21,.08), rgba(16,20,21,.5)),
+    radial-gradient(circle at 28% 26%, rgba(224,94,119,.85) 0 7%, transparent 8%),
+    radial-gradient(circle at 70% 26%, rgba(100,198,200,.8) 0 12%, transparent 13%),
+    linear-gradient(150deg, #e6f7f5, #f7e3d7 42%, #415256);
 }
 .photo-main::before {
   content: ""; position: absolute; inset: 34px; border-radius: 28px; border: 1px solid rgba(255,255,255,.34);
   background: linear-gradient(180deg, transparent, rgba(255,255,255,.1));
 }
 .photo-main::after {
-  content: "NEXO"; position: absolute; left: 34px; top: 28px; color: rgba(255,255,255,.25); font-size: clamp(4rem, 9vw, 8rem); font-weight: 900; letter-spacing: -.08em;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,.08), transparent 44%);
+  pointer-events: none;
 }
-.photo-caption { position: absolute; left: 34px; bottom: 34px; color: white; font-family: "Fraunces", serif; font-size: clamp(1.8rem, 3.3vw, 3rem); line-height: 1; max-width: 430px; }
+.hero-logo-mark {
+  position: absolute;
+  width: clamp(190px, 28vw, 360px);
+  right: 7%;
+  top: 12%;
+  opacity: .32;
+  filter: saturate(1.05) drop-shadow(0 24px 40px rgba(16,20,21,.18));
+}
+.photo-caption { position: absolute; left: 34px; bottom: 172px; color: white; font-family: "Fraunces", serif; font-size: clamp(1.8rem, 3.3vw, 3rem); line-height: 1; max-width: 360px; z-index: 2; text-shadow: 0 14px 34px rgba(0,0,0,.34); }
 .quick-card { position: absolute; right: 0; width: min(280px, 48vw); padding: 24px; border-radius: var(--radius-lg); background: var(--sand); box-shadow: var(--shadow); }
 .quick-card span, .quick-card em { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 900; color: var(--teal-dark); font-style: normal; }
 .quick-card strong { display: block; margin: 12px 0 20px; font-family: "Fraunces", serif; font-size: 2rem; line-height: 1; letter-spacing: -.04em; }
@@ -164,7 +178,7 @@ h3 { font-size: 1.25rem; letter-spacing: -.03em; }
 .contact-card a { padding: 16px; border-radius: 14px; background: rgba(255,255,255,.08); font-weight: 900; }
 .footer { padding: 36px clamp(20px, 5vw, 72px); background: #0b0e0f; color: rgba(255,255,255,.65); display: flex; justify-content: space-between; gap: 24px; align-items: center; }
 
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.reveal { opacity: 1; transform: none; }
 .reveal.is-visible { opacity: 1; transform: none; }
 
 @media (max-width: 900px) {
@@ -181,7 +195,7 @@ h3 { font-size: 1.25rem; letter-spacing: -.03em; }
 }
 
 @media (max-width: 560px) {
-  .brand-text { display: none; }
+  .brand-logo { width: 132px; }
   h1 { font-size: clamp(3rem, 17vw, 5.1rem); }
   .hero-visual { min-height: 500px; }
   .quick-card { width: 78%; }
