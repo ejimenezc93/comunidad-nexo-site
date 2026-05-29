@@ -155,26 +155,31 @@ if (calendarBoard) {
   const today = new Date();
   today.setHours(0,0,0,0);
   const dayNames = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+  const note = document.createElement('p');
+  note.className = 'calendar-note';
+  note.textContent = 'Actividades confirmadas dentro de los próximos 30 días. Tocá una actividad para ver detalles.';
+  calendarBoard.appendChild(note);
+  let rendered = 0;
   for (let i = 0; i < 30; i += 1) {
     const date = new Date(today);
     date.setDate(today.getDate() + i);
     const dayEvents = eventsForDate(date);
+    if (!dayEvents.length) continue;
+    rendered += 1;
     const card = document.createElement('article');
     card.className = `calendar-day${i === 0 ? ' today' : ''}`;
-    card.innerHTML = `<div class="calendar-date"><span>${date.getDate()}</span><em>${dayNames[date.getDay()]}</em></div>`;
-    if (dayEvents.length === 0) {
-      const empty = document.createElement('p');
-      empty.className = 'calendar-empty';
-      empty.textContent = 'Sin actividad fija';
-      card.appendChild(empty);
-    }
+    card.innerHTML = `<div class="calendar-date"><span>${date.getDate()}</span><em>${dayNames[date.getDay()]}</em><em>${date.toLocaleDateString('es-CR', { month: 'short' })}</em></div><div class="calendar-event-stack"></div>`;
+    const stack = card.querySelector('.calendar-event-stack');
     dayEvents.forEach((event) => {
       const button = document.createElement('button');
       button.className = `calendar-event ${event.type}`;
       button.innerHTML = `${event.title}<small>${event.time}</small>`;
       button.addEventListener('click', () => openEventModal(event, date));
-      card.appendChild(button);
+      stack.appendChild(button);
     });
     calendarBoard.appendChild(card);
+  }
+  if (!rendered) {
+    note.textContent = 'No hay actividades fijas cargadas para los próximos 30 días.';
   }
 }
