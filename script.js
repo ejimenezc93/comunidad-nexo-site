@@ -84,3 +84,97 @@ document.querySelectorAll('dialog').forEach((dialog) => {
     if (event.target === dialog) dialog.close();
   });
 });
+
+
+// Calendar generation for Comunidad Nexo
+const calendarBoard = document.querySelector('[data-calendar-board]');
+const eventDetails = {
+  domingo: {
+    title: 'Reunión general',
+    type: 'general',
+    time: '10:00 a.m. a 12:00 m.d.',
+    location: 'Hotel Four Points, La Sabana',
+    description: 'Adoración, enseñanza bíblica y comunidad. Incluye Nexo Play para bebés hasta 9 años y Play Plus para 10 a 14.'
+  },
+  youth13: {
+    title: 'Jóvenes 13-17',
+    type: 'youth',
+    time: '5:00 p.m. a 7:00 p.m.',
+    location: 'Hotel Four Points, La Sabana',
+    description: 'Reunión de jóvenes de 13 a 17 años. Ocurre el primer sábado de cada mes.'
+  },
+  youth18: {
+    title: 'Jóvenes 18-26',
+    type: 'youth',
+    time: '5:00 p.m. a 7:00 p.m.',
+    location: 'Hotel Four Points, La Sabana',
+    description: 'Reunión de jóvenes adultos de 18 a 26 años. Ocurre el segundo sábado de cada mes.'
+  },
+  youthAll: {
+    title: 'Jóvenes juntos',
+    type: 'youth',
+    time: '5:00 p.m. a 7:00 p.m.',
+    location: 'Hotel Four Points, La Sabana',
+    description: 'Reunión conjunta de jóvenes. Ocurre el cuarto sábado de cada mes.'
+  },
+  women: {
+    title: 'Grupo de mujeres',
+    type: 'women',
+    time: '10:00 a.m.',
+    location: 'Hotel Four Points, La Sabana',
+    description: 'Encuentro de mujeres el primer sábado de cada mes.'
+  }
+};
+function nthWeekdayOfMonth(date) {
+  return Math.floor((date.getDate() - 1) / 7) + 1;
+}
+function eventsForDate(date) {
+  const events = [];
+  const day = date.getDay();
+  const nth = nthWeekdayOfMonth(date);
+  if (day === 0) events.push(eventDetails.domingo);
+  if (day === 6 && nth === 1) events.push(eventDetails.youth13, eventDetails.women);
+  if (day === 6 && nth === 2) events.push(eventDetails.youth18);
+  if (day === 6 && nth === 4) events.push(eventDetails.youthAll);
+  return events;
+}
+function formatDate(date) {
+  return date.toLocaleDateString('es-CR', { weekday: 'long', day: 'numeric', month: 'long' });
+}
+function openEventModal(event, date) {
+  const dialog = document.createElement('dialog');
+  dialog.className = 'belief-modal event-modal';
+  dialog.innerHTML = `<button class="modal-close" data-modal-close aria-label="Cerrar">×</button><p class="eyebrow">${formatDate(date)} · ${event.time}</p><h2>${event.title}</h2><p>${event.description}</p><p><strong>Lugar:</strong> ${event.location}</p><p><strong>Contacto/facilitador:</strong> por confirmar.</p><a class="btn btn-primary" href="registro.html">Quiero más información</a>`;
+  document.body.appendChild(dialog);
+  dialog.querySelector('[data-modal-close]').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+  dialog.addEventListener('close', () => dialog.remove());
+  dialog.showModal();
+}
+if (calendarBoard) {
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const dayNames = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+  for (let i = 0; i < 30; i += 1) {
+    const date = new Date(today);
+    date.setDate(today.getDate() + i);
+    const dayEvents = eventsForDate(date);
+    const card = document.createElement('article');
+    card.className = `calendar-day${i === 0 ? ' today' : ''}`;
+    card.innerHTML = `<div class="calendar-date"><span>${date.getDate()}</span><em>${dayNames[date.getDay()]}</em></div>`;
+    if (dayEvents.length === 0) {
+      const empty = document.createElement('p');
+      empty.className = 'calendar-empty';
+      empty.textContent = 'Sin actividad fija';
+      card.appendChild(empty);
+    }
+    dayEvents.forEach((event) => {
+      const button = document.createElement('button');
+      button.className = `calendar-event ${event.type}`;
+      button.innerHTML = `${event.title}<small>${event.time}</small>`;
+      button.addEventListener('click', () => openEventModal(event, date));
+      card.appendChild(button);
+    });
+    calendarBoard.appendChild(card);
+  }
+}

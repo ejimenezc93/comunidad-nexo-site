@@ -17,7 +17,7 @@
     <a href="index.html" class="brand" aria-label="Comunidad Nexo inicio"><img class="brand-logo" src="assets/nexo-logo-clean-web.png" alt="Comunidad Nexo" /></a>
     <button class="menu-toggle" data-menu-toggle aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
     <nav class="nav" data-nav aria-label="Navegación principal">
-      <a href="index.html" class="">Inicio</a><a href="index.html#visitanos" class="">Visítanos</a><a href="videos.html" class="">Mensajes</a><a href="declaracion-de-fe.html" class="active">Nuestra fe</a><a href="registro.html" class="">Conectarme</a><a href="index.html#dar" class="nav-pill">Dar</a>
+      <a href="index.html" class="">Inicio</a><a href="index.html#visitanos" class="">Visítanos</a><a href="calendario.html" class="">Calendario</a><a href="videos.html" class="">Mensajes</a><a href="declaracion-de-fe.html" class="active">Nuestra fe</a><a href="registro.html" class="">Conectarme</a><a href="index.html#dar" class="nav-pill">Dar</a>
     </nav>
   </header>
   <main>
@@ -42,9 +42,11 @@
           <a href="#dios">Dios</a>
           <a href="#jesucristo">Jesucristo</a>
           <a href="#espiritu-santo">Espíritu Santo</a>
+          <a href="#hombre-pecado">Hombre y pecado</a>
           <a href="#salvacion">Salvación</a>
           <a href="#iglesia">La iglesia</a>
-          <a href="#ordenanzas">Ordenanzas</a>
+          <a href="#bautismo">Bautismo</a>
+          <a href="#cena">Cena del Señor</a>
           <a href="#escatologia">Escatología</a>
         </aside>
         <article class="faith-document">
@@ -80,26 +82,28 @@
           <div class="interactive-heading">
             <p class="eyebrow">Valores de la iglesia</p>
             <h2 id="valores">Cómo queremos vivir como comunidad.</h2>
-            <p>Cada valor resume una convicción práctica y puede abrirse para leer su explicación y textos de respaldo.</p>
+            <p>Los valores se muestran desde el inicio como tarjetas claras. Al abrir cada uno, se ve la explicación completa y sus textos de respaldo sin mandar a la persona a otro documento.</p>
           </div>
-          <div class="values-accordion-grid">
-            <details class="value-accordion"><summary><span>01</span><strong>Integridad</strong></summary><p>Vivimos de manera coherente con lo que creemos, reflejando en nuestra vida diaria la verdad del evangelio.</p><p class="support-label">Textos de respaldo</p><p class="scripture-ref">Proverbios 10:9 · Tito 2:7-8</p></details>
-            <details class="value-accordion"><summary><span>02</span><strong>Fe</strong></summary><p>Dependemos de Dios en todo, confiando plenamente en su Palabra y en su obra.</p><p class="support-label">Textos de respaldo</p><p class="scripture-ref">Hebreos 11:1 · Hebreos 11:6 · Romanos 1:17</p></details>
-            <details class="value-accordion"><summary><span>03</span><strong>Amor</strong></summary><p>Nos relacionamos con Dios y con los demás reflejando el carácter de Cristo.</p><p class="support-label">Textos de respaldo</p><p class="scripture-ref">Mateo 22:37-39 · Juan 13:34-35</p></details>
-            <details class="value-accordion"><summary><span>04</span><strong>Compromiso</strong></summary><p>Nos dedicamos con constancia al crecimiento espiritual y a la vida en comunidad.</p><p class="support-label">Textos de respaldo</p><p class="scripture-ref">Hechos 2:42 · Lucas 9:23</p></details>
-            <details class="value-accordion"><summary><span>05</span><strong>Servicio</strong></summary><p>Seguimos el ejemplo de Cristo sirviendo a otros con humildad.</p><p class="support-label">Textos de respaldo</p><p class="scripture-ref">Marcos 10:43-45 · Juan 13:12-17</p></details>
-            <details class="value-accordion"><summary><span>06</span><strong>Generosidad</strong></summary><p>Damos con alegría nuestro tiempo, recursos y dones para la obra de Dios.</p><p class="support-label">Textos de respaldo</p><p class="scripture-ref">Hechos 20:35 · 1 Timoteo 6:17-19</p></details>
+          <div class="values-modal-grid">
+            <article class="value-card"><span>01</span><h3>Integridad</h3><p>Coherencia entre lo que creemos, enseñamos y vivimos.</p><button class="text-link modal-trigger" data-modal-target="modal-integridad">Ver valor →</button></article>
+            <article class="value-card"><span>02</span><h3>Fe</h3><p>Dependencia de Dios y confianza plena en su Palabra.</p><button class="text-link modal-trigger" data-modal-target="modal-fe">Ver valor →</button></article>
+            <article class="value-card"><span>03</span><h3>Amor</h3><p>Relaciones marcadas por el carácter de Cristo.</p><button class="text-link modal-trigger" data-modal-target="modal-amor">Ver valor →</button></article>
+            <article class="value-card"><span>04</span><h3>Compromiso</h3><p>Constancia en el crecimiento espiritual y la vida en comunidad.</p><button class="text-link modal-trigger" data-modal-target="modal-compromiso">Ver valor →</button></article>
+            <article class="value-card"><span>05</span><h3>Servicio</h3><p>Humildad práctica para edificar y cuidar a otros.</p><button class="text-link modal-trigger" data-modal-target="modal-servicio">Ver valor →</button></article>
+            <article class="value-card"><span>06</span><h3>Generosidad</h3><p>Dones, tiempo y recursos puestos al servicio de la obra de Dios.</p><button class="text-link modal-trigger" data-modal-target="modal-generosidad">Ver valor →</button></article>
           </div>
         </section>
 
         <section class="doctrine-intro" aria-labelledby="doctrina">
-          <p class="eyebrow">Documento completo</p>
-          <h2 id="doctrina">Declaración doctrinal</h2>
-          <p>Después de la identidad y valores, esta sección conserva la declaración doctrinal completa para quienes quieran leer el documento con mayor profundidad.</p>
+          <p class="eyebrow">Declaración doctrinal</p>
+          <h2 id="doctrina">Convicciones de fe por secciones.</h2>
+          <p>La doctrina se presenta en acordeones para diferenciar mejor cada tema. Podés abrir una sección a la vez o leerlas en orden.</p>
         </section>
-
-<h3 id="escrituras">Las Escrituras</h3>
-<p>Creemos que la Biblia, compuesta por el Antiguo y Nuevo Testamento, es la Palabra de Dios, inspirada de multiples maneras y completamente por Él. Afirmamos que es verdadera, suficiente y la autoridad final para la fe, la vida y la doctrina de la iglesia. Sostenemos que toda la Escritura ha sido dada por Dios y que, por tanto, debe ser recibida, estudiada, enseñada y obedecida como norma suprema para el creyente y para la congregación. Rechazamos toda tradición, experiencia, opinión o autoridad humana que pretenda colocarse por encima de la Palabra de Dios. Creemos que la Escritura se interpreta a sí misma y que toda enseñanza debe ser examinada a la luz de ella.</p>
+        <section class="doctrine-accordion-list" aria-label="Secciones de declaración doctrinal">
+            <details class="doctrine-accordion" id="escrituras" open>
+              <summary><span>01</span><strong>Las Escrituras</strong></summary>
+              <div class="doctrine-body">
+                <p>Creemos que la Biblia, compuesta por el Antiguo y Nuevo Testamento, es la Palabra de Dios, inspirada de multiples maneras y completamente por Él. Afirmamos que es verdadera, suficiente y la autoridad final para la fe, la vida y la doctrina de la iglesia. Sostenemos que toda la Escritura ha sido dada por Dios y que, por tanto, debe ser recibida, estudiada, enseñada y obedecida como norma suprema para el creyente y para la congregación. Rechazamos toda tradición, experiencia, opinión o autoridad humana que pretenda colocarse por encima de la Palabra de Dios. Creemos que la Escritura se interpreta a sí misma y que toda enseñanza debe ser examinada a la luz de ella.</p>
 <p class="support-label">Textos de respaldo</p>
 <p class="scripture-ref">2 Timoteo 3:16-17 NBLA</p>
 <p>16 Toda Escritura es inspirada por[a] Dios y[b] útil para enseñar, para reprender, para corregir, para instruir en justicia[c], 17 a fin de que el hombre de Dios sea perfecto[d], equipado para toda buena obra.</p>
@@ -107,15 +111,23 @@
 <p>20 Pero ante todo sepan esto, que ninguna profecía de la Escritura es asunto de interpretación personal, 21 pues ninguna profecía fue dada[a] jamás por un acto de voluntad humana, sino que hombres inspirados[b] por el Espíritu Santo hablaron de parte de Dios.</p>
 <p class="scripture-ref">Mateo 5:18 NBLA</p>
 <p>18 Porque en verdad les digo que hasta que pasen el cielo y la tierra, no se perderá ni la letra más pequeña[a]ni una tilde de la ley hasta que toda se cumpla.</p>
-<h3 id="dios">Dios</h3>
-<p>Creemos en un solo Dios vivo y verdadero, eterno, infinito y perfecto en todos sus atributos. Creemos que Dios existe eternamente en tres personas: Padre, Hijo y Espíritu Santo, un solo Dios en esencia y tres personas distintas. Afirmamos que Dios es santo, justo, amoroso, misericordioso, fiel y soberano sobre todas las cosas. Él gobierna la historia, sostiene su creación y obra conforme a su voluntad perfecta. Toda adoración, enseñanza y vida de la iglesia deben estar centradas en la gloria de Dios y en la realidad de su señorío absoluto.</p>
+              </div>
+            </details>
+            <details class="doctrine-accordion" id="dios">
+              <summary><span>02</span><strong>Dios</strong></summary>
+              <div class="doctrine-body">
+                <p>Creemos en un solo Dios vivo y verdadero, eterno, infinito y perfecto en todos sus atributos. Creemos que Dios existe eternamente en tres personas: Padre, Hijo y Espíritu Santo, un solo Dios en esencia y tres personas distintas. Afirmamos que Dios es santo, justo, amoroso, misericordioso, fiel y soberano sobre todas las cosas. Él gobierna la historia, sostiene su creación y obra conforme a su voluntad perfecta. Toda adoración, enseñanza y vida de la iglesia deben estar centradas en la gloria de Dios y en la realidad de su señorío absoluto.</p>
 <p class="support-label">Textos de respaldo</p>
 <p class="scripture-ref">Isaías 45:5-6 NBLA</p>
 <p>5 -»Yo soy el Señor, y no hay ningún otro; Fuera de Mí no hay Dios. Yo te fortaleceré[a], aunque no me has conocido, 6 Para que se sepa que desde el nacimiento del sol hasta donde se pone, No hay ninguno fuera de Mí. Yo soy el Señor, y no hay otro.</p>
 <p class="scripture-ref">Mateo 28:19 NBLA</p>
 <p>19 Vayan, pues, y hagan discípulos de todas las naciones, bautizándolos en el nombre del Padre y del Hijo y del Espíritu Santo,</p>
-<h3 id="jesucristo">Jesucristo</h3>
-<p>Creemos que Jesucristo es el Hijo eterno de Dios, plenamente Dios y plenamente hombre. Afirmamos que nació de una virgen, vivió una vida sin pecado, obedeció perfectamente al Padre y se entregó a sí mismo por los pecadores. Creemos que en la cruz llevó el castigo del pecado, que su sacrificio es suficiente para la redención, que resucitó corporalmente al tercer día, que ascendió al cielo y que reina con toda autoridad. Él es el único mediador entre Dios y los hombres y el único camino de salvación. En Cristo se encuentra la revelación perfecta de Dios y la única esperanza verdadera para la humanidad.</p>
+              </div>
+            </details>
+            <details class="doctrine-accordion" id="jesucristo">
+              <summary><span>03</span><strong>Jesucristo</strong></summary>
+              <div class="doctrine-body">
+                <p>Creemos que Jesucristo es el Hijo eterno de Dios, plenamente Dios y plenamente hombre. Afirmamos que nació de una virgen, vivió una vida sin pecado, obedeció perfectamente al Padre y se entregó a sí mismo por los pecadores. Creemos que en la cruz llevó el castigo del pecado, que su sacrificio es suficiente para la redención, que resucitó corporalmente al tercer día, que ascendió al cielo y que reina con toda autoridad. Él es el único mediador entre Dios y los hombres y el único camino de salvación. En Cristo se encuentra la revelación perfecta de Dios y la única esperanza verdadera para la humanidad.</p>
 <p class="support-label">Textos de respaldo</p>
 <p class="scripture-ref">Juan 1:1-3 NBLA</p>
 <p>1 En el principio ya existía[a] el Verbo[b], y el Verbo estaba con Dios, y el Verbo era Dios. 2 Él[c] estaba en el principio con Dios. 3 Todas las cosas fueron hechas por medio de Él, y sin Él nada de lo que ha sido hecho, fue hecho.</p>
@@ -127,22 +139,34 @@
 <p>15 Porque no tenemos un Sumo Sacerdote que no pueda compadecerse de nuestras flaquezas, sino Uno que ha sido tentado en todo como nosotros, pero sin pecado.</p>
 <p class="scripture-ref">Juan 14:6 NBLA</p>
 <p>6 Jesús le dijo*: «Yo soy el camino, la verdady la vida; nadie viene al Padre sino por Mí.</p>
-<h3 id="espiritu-santo">El Espíritu Santo</h3>
-<p>Creemos que el Espíritu Santo es Dios, la tercera persona de la Trinidad. Él convence de pecado, regenera al creyente, mora en los hijos de Dios, produce fruto espiritual en ellos y los santifica progresivamente. Creemos que el Espíritu Santo guía a la iglesia, glorifica a Cristo y capacita al creyente para vivir en obediencia y servicio. Afirmamos que Dios continúa obrando hoy con poder y que las manifestaciones espirituales dependen de su voluntad soberana y no del control humano. Toda expresión espiritual debe ser ejercida con orden, sujeción a la Escritura y para la edificación del cuerpo de Cristo.</p>
+              </div>
+            </details>
+            <details class="doctrine-accordion" id="espiritu-santo">
+              <summary><span>04</span><strong>El Espíritu Santo</strong></summary>
+              <div class="doctrine-body">
+                <p>Creemos que el Espíritu Santo es Dios, la tercera persona de la Trinidad. Él convence de pecado, regenera al creyente, mora en los hijos de Dios, produce fruto espiritual en ellos y los santifica progresivamente. Creemos que el Espíritu Santo guía a la iglesia, glorifica a Cristo y capacita al creyente para vivir en obediencia y servicio. Afirmamos que Dios continúa obrando hoy con poder y que las manifestaciones espirituales dependen de su voluntad soberana y no del control humano. Toda expresión espiritual debe ser ejercida con orden, sujeción a la Escritura y para la edificación del cuerpo de Cristo.</p>
 <p class="support-label">Textos de respaldo</p>
 <p class="scripture-ref">Juan 16:7-14 NBLA</p>
 <p>7 »Pero Yo les digo la verdad: les conviene que Yo me vaya; porque si no me voy, el Consolador no vendrá a ustedes; pero si me voy, se lo enviaré . 8 »Y cuando Él venga, convencerá al mundo de pecado, de justicia y de juicio; 9 de pecado, porque no creen en Mí; 10 de justicia, porque Yo voy al Padre y ustedes no me verán más; 11 y de juicio, porque el príncipe de este mundo ha sido juzgado. 12 »Aún tengo muchas cosas que decirles, pero ahora no las pueden soportar. 13 Pero cuando Él, el Espíritu de verdad venga, los guiará a toda la verdad, porque no hablará por Su propia cuenta, sino que hablará todo lo que oiga, y les hará saberlo que habrá de venir. 14 Él me glorificará, porque tomará de lo Mío y se lo hará saber a ustedes.</p>
 <p class="scripture-ref">Juan 14:16-17 NBLA</p>
 <p>16 Entonces Yo rogaré al Padre, y Él les dará otro Consolador[a]para que esté con ustedes para siempre; 17 es decir, el Espíritu de verdad, a quien el mundo no puede recibir, porque ni lo ve ni lo conoce, pero ustedes sí lo conocen porque mora con ustedes y estará en ustedes.</p>
-<h3 id="hombre-pecado">El hombre y el pecado</h3>
-<p>Creemos que el ser humano fue creado a imagen de Dios, con dignidad, propósito y responsabilidad delante de Él. Fue creado para vivir en comunión con su Creador y reflejar su gloria en la tierra. Sin embargo, por causa del pecado, la humanidad cayó de ese diseño original y quedó separada de Dios, bajo corrupción moral y en necesidad absoluta de redención. Afirmamos que el pecado afecta a toda persona y que el hombre, por sí mismo, no puede reconciliarse con Dios ni salvarse por sus propios méritos. Por eso, toda esperanza de restauración depende enteramente de la gracia divina.</p>
+              </div>
+            </details>
+            <details class="doctrine-accordion" id="hombre-pecado">
+              <summary><span>05</span><strong>El hombre y el pecado</strong></summary>
+              <div class="doctrine-body">
+                <p>Creemos que el ser humano fue creado a imagen de Dios, con dignidad, propósito y responsabilidad delante de Él. Fue creado para vivir en comunión con su Creador y reflejar su gloria en la tierra. Sin embargo, por causa del pecado, la humanidad cayó de ese diseño original y quedó separada de Dios, bajo corrupción moral y en necesidad absoluta de redención. Afirmamos que el pecado afecta a toda persona y que el hombre, por sí mismo, no puede reconciliarse con Dios ni salvarse por sus propios méritos. Por eso, toda esperanza de restauración depende enteramente de la gracia divina.</p>
 <p class="support-label">Textos de respaldo</p>
 <p class="scripture-ref">Génesis 1:26-27 NBLA</p>
 <p>26 Y dijo Dios: «Hagamos al hombre a Nuestra imagen, conforme a Nuestra semejanza; y ejerza[a] dominio sobre los peces del mar, sobre las aves del cielo, sobre los ganados, sobre toda la tierra, y sobre todo reptil que se arrastra sobre la tierra». 27 Dios creó al hombre a imagen Suya, a imagen de Dios lo creó; varón y hembra los creó.</p>
 <p class="scripture-ref">Romanos 5:12 NBLA</p>
 <p>12 Por tanto, tal como el pecado entró en el mundo por medio de un hombre, y por medio del pecado la muerte, así también la muerte se extendió a todos los hombres, porque todos pecaron.</p>
-<h3 id="salvacion">La salvación</h3>
-<p>Creemos que la salvación es por gracia, por medio de la fe, basada únicamente en la obra de Jesucristo. Afirmamos que es Dios quien toma la iniciativa en la salvación y que el ser humano responde a esa gracia por medio de la fe. Creemos que el creyente es justificado por la fe, reconciliado con Dios, hecho nueva criatura y llamado a una vida de obediencia y santificación. Toda verdadera salvación procede únicamente de la gracia de Dios en Cristo, y por eso toda gloria pertenece al Señor. Reconocemos que puede haber diferencias entre creyentes respecto a algunos aspectos del orden y modo en que Dios obra en la salvación, pero afirmamos con claridad que nadie es salvo fuera de Cristo ni por medios distintos a su gracia.</p>
+              </div>
+            </details>
+            <details class="doctrine-accordion" id="salvacion">
+              <summary><span>06</span><strong>La salvación</strong></summary>
+              <div class="doctrine-body">
+                <p>Creemos que la salvación es por gracia, por medio de la fe, basada únicamente en la obra de Jesucristo. Afirmamos que es Dios quien toma la iniciativa en la salvación y que el ser humano responde a esa gracia por medio de la fe. Creemos que el creyente es justificado por la fe, reconciliado con Dios, hecho nueva criatura y llamado a una vida de obediencia y santificación. Toda verdadera salvación procede únicamente de la gracia de Dios en Cristo, y por eso toda gloria pertenece al Señor. Reconocemos que puede haber diferencias entre creyentes respecto a algunos aspectos del orden y modo en que Dios obra en la salvación, pero afirmamos con claridad que nadie es salvo fuera de Cristo ni por medios distintos a su gracia.</p>
 <p class="support-label">Textos de respaldo</p>
 <p class="scripture-ref">Juan 3:16 NBLA</p>
 <p>16 »Porque de tal manera amó Dios al mundo , que dio a Su Hijo unigénito , para que todo aquel que cree en Él, no se pierda, sino que tenga vida eterna .</p>
@@ -152,16 +176,23 @@
 <p>4 Pero cuando se manifestó la bondad de Dios nuestro Salvador, y Su amor hacia la humanidad, 5 Él nos salvó, no por las obras de[a] justicia que nosotros hubiéramos hecho, sino conforme a Su misericordia, por medio del lavamiento de la regeneración y la renovación por el Espíritu Santo, 6 que Él derramó sobre nosotros abundantemente por medio de Jesucristo nuestro Salvador, 7 para que justificados por Su gracia fuéramos hechos herederos según la esperanza de la vida eterna[b].</p>
 <p class="scripture-ref">Romanos 8:29-30 NBLA</p>
 <p>29 Porque a los que de antemano conoció, también los predestinó a ser hechos conforme a la imagen de Su Hijo, para que Él sea el primogénito entre muchos hermanos. 30 A los que predestinó, a esos también llamó. A los que llamó, a esos también justificó. A los que justificó, a esos también glorificó.</p>
-<h3 id="iglesia">La iglesia</h3>
-<p>Creemos que la iglesia es el cuerpo de Cristo, compuesto por todos los creyentes, y que la iglesia local es una expresión visible de ese cuerpo en un lugar determinado. La iglesia existe para glorificar a Dios, proclamar el evangelio, edificar a los santos y vivir en comunión, santidad y misión. Afirmamos la importancia de la vida comunitaria, la membresía comprometida, el cuidado mutuo, la enseñanza fiel de la Palabra y la autoridad espiritual establecida por Dios para el bien de la congregación. También creemos en la disciplina eclesiástica ejercida con sabiduría, humildad y propósito restaurador, buscando siempre la santidad de la iglesia y el bien espiritual de las personas.</p>
+              </div>
+            </details>
+            <details class="doctrine-accordion" id="iglesia">
+              <summary><span>07</span><strong>La iglesia</strong></summary>
+              <div class="doctrine-body">
+                <p>Creemos que la iglesia es el cuerpo de Cristo, compuesto por todos los creyentes, y que la iglesia local es una expresión visible de ese cuerpo en un lugar determinado. La iglesia existe para glorificar a Dios, proclamar el evangelio, edificar a los santos y vivir en comunión, santidad y misión. Afirmamos la importancia de la vida comunitaria, la membresía comprometida, el cuidado mutuo, la enseñanza fiel de la Palabra y la autoridad espiritual establecida por Dios para el bien de la congregación. También creemos en la disciplina eclesiástica ejercida con sabiduría, humildad y propósito restaurador, buscando siempre la santidad de la iglesia y el bien espiritual de las personas.</p>
 <p class="support-label">Textos de respaldo</p>
 <p class="scripture-ref">Mateo 16:18 NBLA</p>
 <p>18 Yo también te digo que tú eres Pedro[a], y sobre esta roca[b]edificaré Mi iglesia; y las puertas del Hades[c]no prevalecerán contra ella.</p>
 <p class="scripture-ref">1 Corintios 12:12-27 NBLA</p>
 <p>12 Porque así como el cuerpo es uno, y tiene muchos miembros, pero, todos los miembros del cuerpo, aunque son muchos, constituyen un solo cuerpo, así también es Cristo. 13 Pues por[a] un mismo Espíritu todos fuimos bautizados en un solo cuerpo, ya judíos o griegos, ya esclavos o libres. A todos se nos dio a beber[b] del mismo Espíritu. 14 Porque el cuerpo no es un solo miembro, sino muchos. 15 Si el pie dijera: «Porque no soy mano, no soy parte del cuerpo», no por eso deja de ser parte del cuerpo. 16 Y si el oído dijera: «Porque no soy ojo, no soy parte del cuerpo», no por eso deja de ser parte del cuerpo. 17 Si todo el cuerpo fuera ojo, ¿qué sería del[c] oído? Si todo fuera oído, ¿qué sería del[d] olfato? 18 Ahora bien, Dios ha colocado a cada uno de los miembros[e] en el cuerpo según le agradó. 19 Y si todos fueran un solo miembro, ¿qué sería del[f] cuerpo? 20 Sin embargo, hay muchos miembros, pero un solo cuerpo. 21 Y el ojo no puede decirle a la mano: «No te necesito»; ni tampoco la cabeza a los pies: «No los necesito». 22 Por el contrario, la verdad es que los miembros[g] del cuerpo que parecen ser los más débiles, son los más necesarios; 23 y las partes del cuerpo que estimamos[h] menos honrosas, a estas las vestimos con[i] más honra. Así que las partes que consideramos más íntimas[j], reciben un trato más honroso, 24 ya que nuestras partes presentables no lo necesitan. Pero así formó[k] Dios el cuerpo, dando mayor honra a la parte que carecía de ella, 25 a fin de que en el cuerpo no haya división[l], sino que los miembros tengan el mismo cuidado unos por otros. 26 Si un miembro sufre, todos los miembros sufren con él; y si un miembro es honrado[m], todos los miembros se regocijan con él. 27 Ahora bien, ustedes son el cuerpo de Cristo, y cada uno individualmente un miembro de él.</p>
-<h3 id="ordenanzas">Ordenanzas</h3>
-<h3 id="bautismo">Bautismo</h3>
-<p>Creemos que el bautismo es una ordenanza dada por Cristo para quienes han creído en Él. Es una expresión pública de fe, obediencia e identificación con la muerte y resurrección de Cristo. Entendemos el bautismo como una respuesta consciente de fe y como testimonio visible de la obra de Dios en la vida del creyente. Por esta razón, sostenemos el bautismo de creyentes y no el bautismo infantil.</p>
+              </div>
+            </details>
+            <details class="doctrine-accordion" id="bautismo">
+              <summary><span>08</span><strong>Bautismo</strong></summary>
+              <div class="doctrine-body">
+                <p>Creemos que el bautismo es una ordenanza dada por Cristo para quienes han creído en Él. Es una expresión pública de fe, obediencia e identificación con la muerte y resurrección de Cristo. Entendemos el bautismo como una respuesta consciente de fe y como testimonio visible de la obra de Dios en la vida del creyente. Por esta razón, sostenemos el bautismo de creyentes y no el bautismo infantil.</p>
 <p class="support-label">Textos de respaldo</p>
 <p class="scripture-ref">Hechos 2:38-39 NBLA</p>
 <p>38 Entonces Pedro les dijo: «Arrepiéntanse y sean bautizados cada uno de ustedes en el nombre de Jesucristo para perdón de sus pecados, y recibirán el don del Espíritu Santo. 39 Porque la promesa es para ustedes y para sus hijos y para todos los que están lejos, para tantos como el Señor nuestro Dios llame».</p>
@@ -169,20 +200,31 @@
 <p>36 Yendo por el camino, llegaron a un lugar donde había agua; y el eunuco dijo*: «Ahí hay agua. ¿Qué impide que yo sea bautizado?». 37 [a]Y Felipe le dijo: «Si usted cree con todo su corazón, puede». «Creo que Jesucristo es el Hijo de Dios», respondió el eunuco. 38 Y mandó parar el carruaje; ambos descendieron al agua, y Felipe lo bautizó.</p>
 <p class="scripture-ref">Romanos 6:3-4 NBLA</p>
 <p>3 ¿O no saben ustedes que todos los que hemos sido bautizados en Cristo Jesús, hemos sido bautizados en Su muerte? 4 Por tanto, hemos sido sepultados con Él por medio del bautismo para muerte, a fin de que como Cristo resucitó de entre los muertos por la gloria del Padre, así también nosotros andemos en novedad de vida.</p>
-<h3 id="cena">Cena del Señor</h3>
-<p>Creemos que la Cena del Señor es una ordenanza dada por Cristo para recordar su sacrificio, proclamar su muerte y fortalecer la comunión del pueblo de Dios en adoración y examen reverente. La participamos como memorial de la obra redentora de Cristo y como expresión de gratitud, reverencia y comunión entre los creyentes. Afirmamos que Cristo está presente con su pueblo, pero no de manera física en los elementos.</p>
+              </div>
+            </details>
+            <details class="doctrine-accordion" id="cena">
+              <summary><span>09</span><strong>Cena del Señor</strong></summary>
+              <div class="doctrine-body">
+                <p>Creemos que la Cena del Señor es una ordenanza dada por Cristo para recordar su sacrificio, proclamar su muerte y fortalecer la comunión del pueblo de Dios en adoración y examen reverente. La participamos como memorial de la obra redentora de Cristo y como expresión de gratitud, reverencia y comunión entre los creyentes. Afirmamos que Cristo está presente con su pueblo, pero no de manera física en los elementos.</p>
 <p class="support-label">Textos de respaldo</p>
 <p class="scripture-ref">Lucas 22:19-20 NBLA</p>
 <p>19 Y tomando el pan, después de haber dado gracias, lo partió, y les dio, diciendo: «Esto es Mi cuerpo que por ustedes es dado; hagan esto en memoria de Mí». 20 De la misma manera tomó la copa después de haber cenado, diciendo: «Esta copa es el nuevo pactoen Mi sangre, que es derramada por ustedes.</p>
 <p class="scripture-ref">1 Corintios 11:27-32 NBLA</p>
 <p>27 De manera que el que coma el pan o beba la copa del Señor indignamente, será culpable del cuerpo y de la sangre del Señor. 28 Por tanto, examínese cada uno[a] a sí mismo, y entonces coma del pan y beba de la copa. 29 Porque el que come y bebe sin discernir correctamente el cuerpo del Señor, come y bebe juicio para sí. 30 Por esta razón hay muchos débiles y enfermos entre ustedes, y muchos duermen[b]. 31 Pero si nos juzgáramos a nosotros mismos, no seríamos juzgados. 32 Pero cuando somos juzgados, el Señor nos disciplina para que no seamos condenados con el mundo.</p>
-<h3 id="escatologia">Escatología</h3>
-<p>Creemos que Jesucristo volverá, que habrá resurrección de los muertos, juicio final y consumación plena del plan redentor de Dios. Esta esperanza futura sostiene la perseverancia, la santidad y la fidelidad de la iglesia en el presente. Reconocemos que existen diferencias legítimas entre creyentes respecto a los detalles de los eventos futuros. Por ello, afirmamos con claridad las verdades centrales reveladas en la Escritura, manteniendo libertad en asuntos secundarios que no afectan el evangelio ni la unidad de la iglesia.</p>
+              </div>
+            </details>
+            <details class="doctrine-accordion" id="escatologia">
+              <summary><span>10</span><strong>Escatología</strong></summary>
+              <div class="doctrine-body">
+                <p>Creemos que Jesucristo volverá, que habrá resurrección de los muertos, juicio final y consumación plena del plan redentor de Dios. Esta esperanza futura sostiene la perseverancia, la santidad y la fidelidad de la iglesia en el presente. Reconocemos que existen diferencias legítimas entre creyentes respecto a los detalles de los eventos futuros. Por ello, afirmamos con claridad las verdades centrales reveladas en la Escritura, manteniendo libertad en asuntos secundarios que no afectan el evangelio ni la unidad de la iglesia.</p>
 <p class="support-label">Textos de respaldo</p>
 <p class="scripture-ref">Juan 14:1-3 NBLA</p>
 <p>14 »No se turbe su corazón ; crean[a] en Dios, crean también en Mí. 2 En la casa de Mi Padre hay muchas moradas; si no fuera así, se lo hubiera dicho; porque voy a preparar un lugar para ustedes. 3 Y si me voy y les preparo un lugar, vendré otra vezy los tomaré adonde Yo voy; para que donde Yo esté, allí estén ustedes también.</p>
 <p class="scripture-ref">1 Tesalonicenses 4:16-17 NBLA</p>
 <p>16 Pues el Señor mismo descenderá del cielo con voz[a] de mando, con voz de arcángel y con la trompeta de Dios, y los muertos en Cristo se levantarán primero. 17 Entonces nosotros, los que estemos vivos y que permanezcamos, seremos arrebatados juntamente con ellos en las nubes al encuentro del Señor en el aire, y así estaremos con el Señor siempre. Creemos que estas convicciones no existen solamente para definir doctrina, sino para guiar la vida de la iglesia en fidelidad a Dios, en unidad, santidad, amor y servicio. Deseamos ser una congregación que conozca la verdad, viva la verdad y anuncie la verdad de Cristo con gracia, reverencia y fidelidad.</p>
+              </div>
+            </details>
+        </section>
       </article>
       </div>
     </section>
@@ -209,6 +251,13 @@
     <p>Afirmamos que Jesucristo es la revelación perfecta de Dios y que en Él conocemos al Padre de manera verdadera. Nuestro enfoque ministerial busca reflejar el carácter de Cristo en la enseñanza, el discipulado, la adoración, el servicio y la vida comunitaria.</p>
     <details class="scripture-block"><summary>Textos de respaldo</summary><p><strong>Juan 1:14</strong> · <strong>Juan 14:6-10</strong></p></details>
   </dialog>
+
+  <dialog class="belief-modal value-modal" id="modal-integridad"><button class="modal-close" data-modal-close aria-label="Cerrar">×</button><p class="eyebrow">Valor 01</p><h2>Integridad</h2><p>Vivimos de manera coherente con lo que creemos, reflejando en nuestra vida diaria la verdad del evangelio.</p><details class="scripture-block" open><summary>Textos de respaldo</summary><p><strong>Proverbios 10:9</strong> · <strong>Tito 2:7-8</strong></p></details></dialog>
+  <dialog class="belief-modal value-modal" id="modal-fe"><button class="modal-close" data-modal-close aria-label="Cerrar">×</button><p class="eyebrow">Valor 02</p><h2>Fe</h2><p>Dependemos de Dios en todo, confiando plenamente en su Palabra y en su obra.</p><details class="scripture-block" open><summary>Textos de respaldo</summary><p><strong>Hebreos 11:1</strong> · <strong>Hebreos 11:6</strong> · <strong>Romanos 1:17</strong></p></details></dialog>
+  <dialog class="belief-modal value-modal" id="modal-amor"><button class="modal-close" data-modal-close aria-label="Cerrar">×</button><p class="eyebrow">Valor 03</p><h2>Amor</h2><p>Nos relacionamos con Dios y con los demás reflejando el carácter de Cristo.</p><details class="scripture-block" open><summary>Textos de respaldo</summary><p><strong>Mateo 22:37-39</strong> · <strong>Juan 13:34-35</strong></p></details></dialog>
+  <dialog class="belief-modal value-modal" id="modal-compromiso"><button class="modal-close" data-modal-close aria-label="Cerrar">×</button><p class="eyebrow">Valor 04</p><h2>Compromiso</h2><p>Nos dedicamos con constancia al crecimiento espiritual y a la vida en comunidad.</p><details class="scripture-block" open><summary>Textos de respaldo</summary><p><strong>Hechos 2:42</strong> · <strong>Lucas 9:23</strong></p></details></dialog>
+  <dialog class="belief-modal value-modal" id="modal-servicio"><button class="modal-close" data-modal-close aria-label="Cerrar">×</button><p class="eyebrow">Valor 05</p><h2>Servicio</h2><p>Seguimos el ejemplo de Cristo sirviendo a otros con humildad.</p><details class="scripture-block" open><summary>Textos de respaldo</summary><p><strong>Marcos 10:43-45</strong> · <strong>Juan 13:12-17</strong></p></details></dialog>
+  <dialog class="belief-modal value-modal" id="modal-generosidad"><button class="modal-close" data-modal-close aria-label="Cerrar">×</button><p class="eyebrow">Valor 06</p><h2>Generosidad</h2><p>Damos con alegría nuestro tiempo, recursos y dones para la obra de Dios.</p><details class="scripture-block" open><summary>Textos de respaldo</summary><p><strong>Hechos 20:35</strong> · <strong>1 Timoteo 6:17-19</strong></p></details></dialog>
 
   <footer class="footer"><img class="brand-logo footer-logo" src="assets/nexo-logo-clean-web.png" alt="Comunidad Nexo" /><p>Compartimos el evangelio y formamos discípulos de Cristo.</p></footer>
   <script src="script.js"></script>

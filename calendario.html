@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calendario | Comunidad Nexo</title>
+  <meta name="description" content="Calendario de reuniones, jóvenes, mujeres, grupos pequeños y actividades de Comunidad Nexo." />
+  <meta name="theme-color" content="#19b7b2" />
+  <link rel="icon" type="image/png" href="assets/nexo-icon-clean-web.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" data-header>
+    <a href="index.html" class="brand" aria-label="Comunidad Nexo inicio"><img class="brand-logo" src="assets/nexo-logo-clean-web.png" alt="Comunidad Nexo" /></a>
+    <button class="menu-toggle" data-menu-toggle aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" data-nav aria-label="Navegación principal">
+      <a href="index.html" class="">Inicio</a><a href="index.html#visitanos" class="">Visítanos</a><a href="calendario.html" class="active">Calendario</a><a href="videos.html" class="">Mensajes</a><a href="declaracion-de-fe.html" class="">Nuestra fe</a><a href="registro.html" class="">Conectarme</a><a href="index.html#dar" class="nav-pill">Dar</a>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero calendar-hero">
+      <p class="eyebrow">Calendario</p>
+      <h1>Un mes visual para encontrar tu próximo espacio en comunidad.</h1>
+      <p class="lead">Reunión general, jóvenes, mujeres, grupos pequeños, Nexo Play y Play Plus organizados en un calendario interactivo de los próximos 30 días.</p>
+    </section>
+
+    <section class="calendar-section section-pad">
+      <div class="calendar-shell">
+        <div class="calendar-intro">
+          <p class="eyebrow">Próximos 30 días</p>
+          <h2>Calendario interactivo</h2>
+          <p>Hacé click en cualquier actividad para ver horario, lugar, edades, facilitador o contacto disponible.</p>
+          <div class="calendar-legend">
+            <span class="legend-dot general"></span> Reunión general
+            <span class="legend-dot youth"></span> Jóvenes
+            <span class="legend-dot women"></span> Mujeres
+            <span class="legend-dot kids"></span> Niños
+            <span class="legend-dot groups"></span> Grupos
+          </div>
+        </div>
+        <div class="calendar-board" data-calendar-board></div>
+      </div>
+    </section>
+
+    <section id="grupos" class="groups-section section-pad soft-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Grupos pequeños</p>
+        <h2>Espacios durante la semana.</h2>
+        <p>Grupos diseñados para mostrar día, hora, facilitador y contacto. A medida que confirmemos los datos específicos de cada grupo, se pueden cargar aquí para que cada persona encuentre el espacio más cercano.</p>
+      </div>
+      <div class="small-groups-grid reveal">
+        <article><span>Entre semana</span><h3>Grupos en casas</h3><p>Reuniones en hogares para crecer, orar y acompañarnos.</p><dl><dt>Facilitador</dt><dd>Por confirmar</dd><dt>Contacto</dt><dd>Por confirmar</dd></dl></article>
+        <article><span>Hombres</span><h3>Grupos de hombres</h3><p>Los hombres se reúnen en casas. La ubicación específica puede variar por grupo.</p><dl><dt>Facilitador</dt><dd>Por confirmar</dd><dt>Contacto</dt><dd>Por confirmar</dd></dl></article>
+        <article><span>Mujeres</span><h3>Encuentro de mujeres</h3><p>Primer sábado de cada mes, 10:00 a.m., hotel Four Points, La Sabana.</p><dl><dt>Facilitador</dt><dd>Por confirmar</dd><dt>Contacto</dt><dd>Por confirmar</dd></dl></article>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="family-card reveal">
+        <div><p class="eyebrow">Familias los domingos</p><h2>Nexo Play y Play Plus</h2><p>Nexo Play acompaña a bebés hasta 9 años. Play Plus está pensado para chicos de 10 a 14. Ambos están integrados a la experiencia dominical para que las familias puedan participar con tranquilidad.</p></div>
+        <a class="btn btn-primary" href="registro.html">Quiero más información</a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><img class="brand-logo footer-logo" src="assets/nexo-logo-clean-web.png" alt="Comunidad Nexo" /><p>Compartimos el evangelio y formamos discípulos de Cristo.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
