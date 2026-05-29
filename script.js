@@ -271,7 +271,23 @@ function renderCalendarMonth(monthDate) {
     const dayEvents = eventsForDate(date);
     if (sameDate(date, today)) card.classList.add('today');
     if (dayEvents.length) card.classList.add('has-events');
-    card.innerHTML = `<div class="month-day-number">${dayNumber}</div><div class="month-event-stack"></div>`;
+    card.innerHTML = `<button class="mobile-day-hit" type="button" aria-label="Ver actividades del ${dayNumber}"><span class="month-day-number">${dayNumber}</span><span class="mobile-event-dots"></span></button><div class="month-event-stack"></div>`;
+    const dayButton = card.querySelector('.mobile-day-hit');
+    const dots = card.querySelector('.mobile-event-dots');
+    if (dayEvents.length) {
+      dayButton.addEventListener('click', () => openDayModal(date, dayEvents));
+      dayEvents.slice(0, 4).forEach((event) => {
+        const dot = document.createElement('span');
+        dot.className = `event-dot ${event.type.split(' ')[0]}`;
+        dots.appendChild(dot);
+      });
+      if (dayEvents.length > 4) {
+        const moreDot = document.createElement('span');
+        moreDot.className = 'event-dot more';
+        moreDot.textContent = '+';
+        dots.appendChild(moreDot);
+      }
+    }
     const stack = card.querySelector('.month-event-stack');
     const visibleEvents = dayEvents.slice(0, 3);
     visibleEvents.forEach((event) => {

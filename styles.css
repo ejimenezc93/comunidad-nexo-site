@@ -759,3 +759,42 @@ h2 { font-size: clamp(2rem, 4.2vw, 4rem); }
   .calendar-intro { grid-template-columns: 1fr; align-items: start; }
   .calendar-intro .calendar-legend { justify-content: flex-start; }
 }
+
+
+/* Mobile calendar: clean tap-first month view */
+.mobile-day-hit {
+  display: contents;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+}
+.mobile-event-dots { display: none; }
+@media (max-width: 700px) {
+  .calendar-section.section-pad { padding-inline: 12px; }
+  .calendar-intro { padding: 22px; border-radius: 24px; }
+  .calendar-intro h2 { font-size: clamp(2rem, 12vw, 3.3rem); }
+  .calendar-intro .calendar-legend { gap: 8px 12px; font-size: .78rem; }
+  .month-calendar-panel { padding: 12px; border-radius: 24px; overflow-x: visible; }
+  .calendar-toolbar { min-width: 0; gap: 10px; margin-bottom: 14px; }
+  .calendar-toolbar h3 { font-size: clamp(1.35rem, 7vw, 2rem); text-align: center; }
+  .calendar-nav-btn { width: 42px; height: 42px; font-size: 1.7rem; flex: 0 0 auto; }
+  .month-board { min-width: 0 !important; grid-template-columns: repeat(7, minmax(0, 1fr)) !important; gap: 6px; }
+  .calendar-weekday { padding: 0 0 5px; font-size: .62rem; letter-spacing: .06em; }
+  .month-day { min-height: 54px; padding: 4px; border-radius: 14px; align-items: center; justify-content: center; gap: 2px; box-shadow: none; }
+  .month-day.is-empty { opacity: .28; }
+  .month-day.has-events { background: #fffdf8; border-color: rgba(10,127,123,.28); box-shadow: 0 8px 18px rgba(16,20,21,.055); }
+  .mobile-day-hit { display: grid; place-items: center; gap: 5px; width: 100%; min-height: 44px; cursor: pointer; }
+  .month-day-number { width: 30px; height: 30px; font-size: .88rem; background: transparent; }
+  .month-day.has-events .month-day-number { background: rgba(24,183,178,.12); color: var(--teal-dark); }
+  .month-day.today .month-day-number { background: var(--teal-dark); color: var(--white); }
+  .mobile-event-dots { display: flex; align-items: center; justify-content: center; gap: 3px; min-height: 8px; }
+  .event-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-grid; place-items: center; font-size: .5rem; line-height: 1; font-weight: 950; }
+  .event-dot.general { background: var(--teal); }
+  .event-dot.youth { background: var(--coral); }
+  .event-dot.women { background: #d99bff; }
+  .event-dot.groups { background: #8ccf7e; }
+  .event-dot.more { width: 10px; height: 10px; background: var(--charcoal); color: var(--white); }
+  .month-event-stack { display: none; }
+  .month-event, .month-event-more { display: none; }
+}
