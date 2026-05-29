@@ -97,7 +97,7 @@ const eventDetails = {
     type: 'general',
     time: '10:00 a.m. a 12:00 m.d.',
     location: 'Hotel Four Points, La Sabana',
-    description: 'Adoración, enseñanza bíblica y comunidad. Por ahora nos reunimos el primer domingo de cada mes. Incluye Nexo Play para bebés hasta 9 años y Play Plus para 10 a 14.',
+    description: 'Adoración, enseñanza bíblica y comunidad. Nos reunimos los primeros cuatro domingos de cada mes. Si el mes tiene quinto domingo, ese día no hay reunión de Nexo. Incluye Nexo Play para bebés hasta 9 años y Play Plus para 10 a 14.',
     contact: 'Equipo de bienvenida'
   },
   noNexoSunday: {
@@ -198,7 +198,7 @@ function eventsForDate(date) {
   const day = date.getDay();
   const nth = nthWeekdayOfMonth(date);
   verticeGroups.filter((group) => shouldShowVertice(group, date)).forEach((group) => events.push(verticeToEvent(group)));
-  if (day === 0 && nth === 1) events.push(eventDetails.domingo);
+  if (day === 0 && nth <= 4) events.push(eventDetails.domingo);
   if (day === 0 && nth === 5) events.push(eventDetails.noNexoSunday);
   if (day === 6 && nth === 1) events.push(eventDetails.youth13, eventDetails.women);
   if (day === 6 && nth === 2) events.push(eventDetails.youth18);
