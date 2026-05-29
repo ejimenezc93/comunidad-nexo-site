@@ -145,6 +145,19 @@ const verticeGroups = [
   { no: 9, facilitator: 'Daniel Arceyut', day: 2, time: '7:00 p.m.', study: 'Expositiva - Gálatas', focus: 'Hombres - Jóvenes', modality: 'Mixta', registration: 'Abierto', cadence: 'biweekly-b' },
   { no: 10, facilitator: 'Erendira Rodríguez', day: 3, time: '6:00 p.m.', study: 'La vida de Jesús', focus: 'General', modality: 'Virtual', registration: 'Abierto', cadence: 'weekly' }
 ];
+function timeToMinutes(time) {
+  const match = String(time).match(/(\d{1,2}):(\d{2})\s*(a\.m\.|p\.m\.)/i);
+  if (!match) return 9999;
+  let hour = Number(match[1]);
+  const minutes = Number(match[2]);
+  const period = match[3].toLowerCase();
+  if (period.includes('p') && hour !== 12) hour += 12;
+  if (period.includes('a') && hour === 12) hour = 0;
+  return hour * 60 + minutes;
+}
+function sortEventsByTime(events) {
+  return [...events].sort((a, b) => timeToMinutes(a.time) - timeToMinutes(b.time) || a.title.localeCompare(b.title, 'es'));
+}
 function nthWeekdayOfMonth(date) {
   return Math.floor((date.getDate() - 1) / 7) + 1;
 }
@@ -180,7 +193,7 @@ function eventsForDate(date) {
   if (day === 6 && nth === 1) events.push(eventDetails.youth13, eventDetails.women);
   if (day === 6 && nth === 2) events.push(eventDetails.youth18);
   if (day === 6 && nth === 4) events.push(eventDetails.youthAll);
-  return events;
+  return sortEventsByTime(events);
 }
 function formatDate(date) {
   return date.toLocaleDateString('es-CR', { weekday: 'long', day: 'numeric', month: 'long' });
@@ -205,7 +218,8 @@ function openEventModal(event, date) {
 function openDayModal(date, events) {
   const dialog = document.createElement('dialog');
   dialog.className = 'belief-modal event-modal day-events-modal';
-  const items = events.map((event) => {
+  const sortedEvents = sortEventsByTime(events);
+  const items = sortedEvents.map((event) => {
     const closed = event.registration === 'Cerrado' ? '<span class="day-event-status closed">Cerrado</span>' : event.registration ? '<span class="day-event-status open">Abierto</span>' : '';
     return `<button class="day-event-row ${event.type}" type="button"><strong>${event.title.replace('Vértice · ', '')}</strong><span>${event.time}</span>${closed}<em>${event.study || event.description}</em></button>`;
   }).join('');
@@ -215,7 +229,7 @@ function openDayModal(date, events) {
   dialog.querySelectorAll('.day-event-row').forEach((button, index) => {
     button.addEventListener('click', () => {
       dialog.close();
-      openEventModal(events[index], date);
+      openEventModal(sortedEvents[index], date);
     });
   });
   dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
