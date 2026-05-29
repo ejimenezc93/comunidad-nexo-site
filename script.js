@@ -66,3 +66,21 @@ if (downloadBtn) {
     if (statusEl) statusEl.textContent = rows.length ? 'CSV descargado.' : 'No hay registros guardados todavía.';
   });
 }
+
+
+// Faith page modals
+const modalTriggers = document.querySelectorAll('[data-modal-target]');
+modalTriggers.forEach((trigger) => {
+  trigger.addEventListener('click', () => {
+    const modal = document.getElementById(trigger.dataset.modalTarget);
+    if (modal && typeof modal.showModal === 'function') modal.showModal();
+  });
+});
+document.querySelectorAll('[data-modal-close]').forEach((button) => {
+  button.addEventListener('click', () => button.closest('dialog')?.close());
+});
+document.querySelectorAll('dialog').forEach((dialog) => {
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+});
