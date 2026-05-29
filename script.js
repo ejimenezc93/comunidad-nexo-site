@@ -97,8 +97,17 @@ const eventDetails = {
     type: 'general',
     time: '10:00 a.m. a 12:00 m.d.',
     location: 'Hotel Four Points, La Sabana',
-    description: 'Adoración, enseñanza bíblica y comunidad. Incluye Nexo Play para bebés hasta 9 años y Play Plus para 10 a 14.',
+    description: 'Adoración, enseñanza bíblica y comunidad. Por ahora nos reunimos el primer domingo de cada mes. Incluye Nexo Play para bebés hasta 9 años y Play Plus para 10 a 14.',
     contact: 'Equipo de bienvenida'
+  },
+  noNexoSunday: {
+    title: 'No hay reunión de Nexo',
+    type: 'no-meeting',
+    time: 'Sin reunión',
+    location: 'Comunidad Nexo',
+    description: 'Este mes tiene cinco domingos. En el quinto domingo no hay reunión general de Comunidad Nexo.',
+    contact: 'Equipo de bienvenida',
+    noCta: true
   },
   youth13: {
     title: 'RED · Jóvenes 13-17',
@@ -189,7 +198,8 @@ function eventsForDate(date) {
   const day = date.getDay();
   const nth = nthWeekdayOfMonth(date);
   verticeGroups.filter((group) => shouldShowVertice(group, date)).forEach((group) => events.push(verticeToEvent(group)));
-  if (day === 0) events.push(eventDetails.domingo);
+  if (day === 0 && nth === 1) events.push(eventDetails.domingo);
+  if (day === 0 && nth === 5) events.push(eventDetails.noNexoSunday);
   if (day === 6 && nth === 1) events.push(eventDetails.youth13, eventDetails.women);
   if (day === 6 && nth === 2) events.push(eventDetails.youth18);
   if (day === 6 && nth === 4) events.push(eventDetails.youthAll);
@@ -208,7 +218,8 @@ function openEventModal(event, date) {
   const dialog = document.createElement('dialog');
   dialog.className = 'belief-modal event-modal';
   const meta = event.study ? `<div class="event-meta-grid"><p><strong>Estudio</strong>${event.study}</p><p><strong>Foco</strong>${event.focus}</p><p><strong>Modalidad</strong>${event.modality}</p><p><strong>Inscripción</strong>${event.registration}</p><p><strong>Frecuencia</strong>${event.cadence}</p></div>` : '';
-  dialog.innerHTML = `<button class="modal-close" data-modal-close aria-label="Cerrar">×</button><p class="eyebrow">${formatDate(date)} · ${event.time}</p><h2>${event.title}</h2><p>${event.description}</p>${meta}<p><strong>Lugar/modalidad:</strong> ${event.location}</p><p><strong>Contacto/facilitador:</strong> ${event.contact || 'Por confirmar'}.</p><a class="btn btn-primary" href="${event.study ? 'grupos-vertice.html?grupo=' + encodeURIComponent(event.contact || event.title) : 'registro.html'}">${event.study ? 'Quiero saber más de este grupo' : 'Quiero que me contacten'}</a>`;
+  const action = event.noCta ? '' : `<a class="btn btn-primary" href="${event.study ? 'grupos-vertice.html?grupo=' + encodeURIComponent(event.contact || event.title) : 'registro.html'}">${event.study ? 'Quiero saber más de este grupo' : 'Quiero que me contacten'}</a>`;
+  dialog.innerHTML = `<button class="modal-close" data-modal-close aria-label="Cerrar">×</button><p class="eyebrow">${formatDate(date)} · ${event.time}</p><h2>${event.title}</h2><p>${event.description}</p>${meta}<p><strong>Lugar/modalidad:</strong> ${event.location}</p><p><strong>Contacto/facilitador:</strong> ${event.contact || 'Por confirmar'}.</p>${action}`;
   document.body.appendChild(dialog);
   dialog.querySelector('[data-modal-close]').addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
