@@ -798,3 +798,59 @@ h2 { font-size: clamp(2rem, 4.2vw, 4rem); }
   .month-event-stack { display: none; }
   .month-event, .month-event-more { display: none; }
 }
+
+
+/* Mobile calendar centering refinement */
+@media (max-width: 700px) {
+  .month-day {
+    aspect-ratio: 1 / 1.08;
+    min-height: 0;
+    padding: 0;
+    display: block;
+  }
+  .mobile-day-hit {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+    padding: 5px 2px 7px;
+    border: 0;
+    background: transparent;
+    border-radius: inherit;
+  }
+  .month-day-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1;
+    border-radius: 50%;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+  .mobile-event-dots {
+    display: flex;
+    flex: 0 0 10px;
+    height: 10px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin: 0;
+  }
+  .event-dot { flex: 0 0 6px; }
+  .event-dot.more { flex-basis: 10px; }
+}
+@media (max-width: 390px) {
+  .month-board { gap: 5px; }
+  .month-day-number { width: 30px; height: 30px; flex-basis: 30px; font-size: .84rem; }
+  .mobile-event-dots { gap: 3px; }
+}
