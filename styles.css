@@ -854,3 +854,11 @@ h2 { font-size: clamp(2rem, 4.2vw, 4rem); }
   .month-day-number { width: 30px; height: 30px; flex-basis: 30px; font-size: .84rem; }
   .mobile-event-dots { gap: 3px; }
 }
+
+
+/* Vértice interest form */
+.vertice-form-hero { background: radial-gradient(circle at 84% 12%, rgba(140,207,126,.24), transparent 30%), radial-gradient(circle at 18% 0%, rgba(24,183,178,.22), transparent 34%), var(--white); }
+.vertice-registration-layout .form-intro { background: linear-gradient(135deg, var(--charcoal), #213536); }
+.vertice-form-cta { margin-top: 18px; }
+.vertice-card-link { display: inline-flex; margin-top: 16px; }
+.vertice-form select[name="grupo"] { min-height: 58px; }

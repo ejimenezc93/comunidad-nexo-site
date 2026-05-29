@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unirme a un grupo Vértice | Comunidad Nexo</title>
+  <meta name="description" content="Dejá tus datos para que Comunidad Nexo te ayude a encontrar un grupo Vértice." />
+  <meta name="theme-color" content="#19b7b2" />
+  <link rel="icon" type="image/png" href="assets/nexo-icon-clean-web.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260529-vertice-form" />
+</head>
+<body>
+  <header class="site-header" data-header>
+    <a href="index.html" class="brand" aria-label="Comunidad Nexo inicio"><img class="brand-logo" src="assets/nexo-logo-clean-web.png" alt="Comunidad Nexo" /></a>
+    <button class="menu-toggle" data-menu-toggle aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" data-nav aria-label="Navegación principal">
+      <a href="index.html" class="">Inicio</a><a href="index.html#visitanos" class="">Visítanos</a><a href="calendario.html" class="">Calendario</a><a href="videos.html" class="">Mensajes</a><a href="declaracion-de-fe.html" class="">Nuestra fe</a><a href="registro.html" class="">Conectarme</a><a href="index.html#dar" class="nav-pill">Dar</a>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero register-hero vertice-form-hero">
+      <p class="eyebrow">Grupos Vértice</p>
+      <h1>Encontrá un grupo Vértice para caminar acompañado.</h1>
+      <p class="lead">Si querés acercarte a un grupo, dejanos tus datos y alguien de Comunidad Nexo te va a orientar. Esto no te hace miembro; solo abre una conversación para ayudarte a encontrar tu lugar.</p>
+    </section>
+    <section class="registration-layout section-pad vertice-registration-layout">
+      <div class="form-intro">
+        <p class="eyebrow">Quiero acercarme a un grupo</p>
+        <h2>Te ayudamos a encontrar un grupo donde podás crecer.</h2>
+        <p>Contanos qué grupo te llamó la atención o qué horario te funciona mejor. Queremos ayudarte a conectar con un espacio donde podás estudiar la Biblia, orar y caminar con otros.</p>
+        <div class="privacy-note"><strong>Privacidad:</strong> vamos a usar esta información solo para contactarte sobre grupos Vértice y cuidarla con responsabilidad.</div>
+      </div>
+      <form class="community-form vertice-form" data-vertice-form>
+        <label>Nombre completo <input name="nombre" required placeholder="Nombre y apellidos" /></label>
+        <label>WhatsApp / teléfono <input name="telefono" required placeholder="+506 ..." /></label>
+        <label>Correo <input name="correo" type="email" placeholder="correo@ejemplo.com" /></label>
+        <label>Edad / etapa <select name="etapa"><option>Adulto/a</option><option>Joven adulto</option><option>Joven 13-17</option><option>Familia / pareja</option><option>Prefiero conversar primero</option></select></label>
+        <label class="full">Grupo que te interesa <select name="grupo" data-vertice-group-select>
+          <option value="">Ayúdenme a escoger</option>
+          <option>Vértice 01 · Valeria Ramírez · Viernes 7:30 p.m. · Mujeres · Virtual</option>
+          <option>Vértice 02 · Andy Monghalo · Martes 8:00 p.m. · Hombres/Jóvenes · Presencial · Cerrado</option>
+          <option>Vértice 03 · Cinthya F. · Viernes 7:00 p.m. · Mujeres · Presencial</option>
+          <option>Vértice 04 · Diego Araya · Miércoles 7:00 p.m. · General · Virtual</option>
+          <option>Vértice 05 · Naty Fuentes · Viernes 1:00 p.m. FT-Texas · Mujeres · Presencial · Cerrado</option>
+          <option>Vértice 06 · Esteban Jiménez · Miércoles 6:30 p.m. · General · Mixto</option>
+          <option>Vértice 07 · Vale Ballestero · Martes 7:00 p.m. C/15 · Mujeres/Jóvenes · Presencial</option>
+          <option>Vértice 08 · Rebeca Guzman · Miércoles 7:30 p.m. · Mujeres · Virtual</option>
+          <option>Vértice 09 · Daniel Arceyut · Martes 7:00 p.m. C/15 · Hombres/Jóvenes · Mixta</option>
+          <option>Vértice 10 · Erendira Rodríguez · Miércoles 6:00 p.m. · General · Virtual</option>
+        </select></label>
+        <label>Modalidad preferida <select name="modalidad"><option>Me sirve cualquiera</option><option>Presencial</option><option>Virtual</option><option>Mixto</option></select></label>
+        <label>Disponibilidad <select name="disponibilidad"><option>Entre semana por la noche</option><option>Martes</option><option>Miércoles</option><option>Viernes</option><option>Sábados</option><option>Necesito coordinar</option></select></label>
+        <label class="full">Contanos un poco más <textarea name="mensaje" rows="5" placeholder="Ej: me interesa este grupo, quiero saber si está abierto, o necesito ayuda para escoger."></textarea></label>
+        <label class="check full"><input name="consentimiento" type="checkbox" required /> Acepto que Comunidad Nexo use estos datos para contactarme sobre grupos Vértice.</label>
+        <div class="form-actions full"><button class="btn btn-primary" type="submit">Quiero que me contacten</button><a class="btn btn-ghost" href="calendario.html#grupos">Ver grupos Vértice</a></div>
+        <p class="form-status full" data-vertice-form-status></p>
+      </form>
+    </section>
+  </main>
+  <footer class="footer"><img class="brand-logo footer-logo" src="assets/nexo-logo-clean-web.png" alt="Comunidad Nexo" /><p>Compartimos el evangelio y formamos discípulos de Cristo.</p></footer>
+  <script src="script.js?v=20260529-vertice-form"></script>
+</body>
+</html>

@@ -30,7 +30,7 @@ document.querySelectorAll('.reveal').forEach((element) => observer.observe(eleme
 const registrationForm = document.querySelector('[data-registration-form]');
 const statusEl = document.querySelector('[data-form-status]');
 const downloadBtn = document.querySelector('[data-download-registrations]');
-const storageKey = 'nexo_demo_registros';
+const storageKey = 'nexo_registros_comunidad';
 
 function getRegistrations() {
   try { return JSON.parse(localStorage.getItem(storageKey) || '[]'); }
@@ -46,7 +46,7 @@ if (registrationForm) {
     rows.push(data);
     localStorage.setItem(storageKey, JSON.stringify(rows));
     registrationForm.reset();
-    if (statusEl) statusEl.textContent = `Registro guardado para revisión. Total en este navegador: ${rows.length}.`;
+    if (statusEl) statusEl.textContent = 'Gracias. Recibimos tu información y alguien de Comunidad Nexo podrá darte seguimiento.';
   });
 }
 
@@ -60,10 +60,10 @@ if (downloadBtn) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'registros-comunidad-nexo-demo.csv';
+    a.download = 'registros-comunidad-nexo.csv';
     a.click();
     URL.revokeObjectURL(url);
-    if (statusEl) statusEl.textContent = rows.length ? 'CSV descargado.' : 'No hay registros guardados todavía.';
+    if (statusEl) statusEl.textContent = rows.length ? 'Archivo descargado.' : 'No hay registros guardados todavía.';
   });
 }
 
@@ -208,7 +208,7 @@ function openEventModal(event, date) {
   const dialog = document.createElement('dialog');
   dialog.className = 'belief-modal event-modal';
   const meta = event.study ? `<div class="event-meta-grid"><p><strong>Estudio</strong>${event.study}</p><p><strong>Foco</strong>${event.focus}</p><p><strong>Modalidad</strong>${event.modality}</p><p><strong>Inscripción</strong>${event.registration}</p><p><strong>Frecuencia</strong>${event.cadence}</p></div>` : '';
-  dialog.innerHTML = `<button class="modal-close" data-modal-close aria-label="Cerrar">×</button><p class="eyebrow">${formatDate(date)} · ${event.time}</p><h2>${event.title}</h2><p>${event.description}</p>${meta}<p><strong>Lugar/modalidad:</strong> ${event.location}</p><p><strong>Contacto/facilitador:</strong> ${event.contact || 'Por confirmar'}.</p><a class="btn btn-primary" href="registro.html">Quiero más información</a>`;
+  dialog.innerHTML = `<button class="modal-close" data-modal-close aria-label="Cerrar">×</button><p class="eyebrow">${formatDate(date)} · ${event.time}</p><h2>${event.title}</h2><p>${event.description}</p>${meta}<p><strong>Lugar/modalidad:</strong> ${event.location}</p><p><strong>Contacto/facilitador:</strong> ${event.contact || 'Por confirmar'}.</p><a class="btn btn-primary" href="${event.study ? 'grupos-vertice.html?grupo=' + encodeURIComponent(event.contact || event.title) : 'registro.html'}">${event.study ? 'Quiero saber más de este grupo' : 'Quiero que me contacten'}</a>`;
   document.body.appendChild(dialog);
   dialog.querySelector('[data-modal-close]').addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
@@ -319,5 +319,36 @@ if (calendarBoard) {
   calendarNext?.addEventListener('click', () => {
     activeMonth = new Date(activeMonth.getFullYear(), activeMonth.getMonth() + 1, 1);
     renderCalendarMonth(activeMonth);
+  });
+}
+
+
+// Vértice group interest form
+const verticeForm = document.querySelector('[data-vertice-form]');
+const verticeStatusEl = document.querySelector('[data-vertice-form-status]');
+const verticeGroupSelect = document.querySelector('[data-vertice-group-select]');
+const verticeStorageKey = 'nexo_vertice_solicitudes';
+if (verticeGroupSelect) {
+  const params = new URLSearchParams(window.location.search);
+  const requestedGroup = params.get('grupo');
+  if (requestedGroup) {
+    const match = Array.from(verticeGroupSelect.options).find((option) => option.textContent.toLowerCase().includes(requestedGroup.toLowerCase()));
+    if (match) match.selected = true;
+  }
+}
+function getVerticeRequests() {
+  try { return JSON.parse(localStorage.getItem(verticeStorageKey) || '[]'); }
+  catch { return []; }
+}
+if (verticeForm) {
+  verticeForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(verticeForm).entries());
+    data.fecha = new Date().toISOString();
+    const rows = getVerticeRequests();
+    rows.push(data);
+    localStorage.setItem(verticeStorageKey, JSON.stringify(rows));
+    verticeForm.reset();
+    if (verticeStatusEl) verticeStatusEl.textContent = 'Gracias. Recibimos tu interés y alguien de Comunidad Nexo podrá orientarte sobre grupos Vértice.';
   });
 }
